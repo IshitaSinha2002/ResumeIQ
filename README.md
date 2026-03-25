@@ -70,3 +70,54 @@
     </ul> 
   </li> 
 </ol>
+<h3>Backend Implementation</h3>
+<ol> 
+  <li><b>Framework and Setup:</b>
+    <ul> 
+      <li>Developed RESTful APIs using Flask.</li>
+      <li>Enabled CORS to allow seamless frontend-backend communication.</li> 
+      <li>Structured backend into modular components (API routes, NLP logic, utilities).</li>  
+    </ul> 
+  </li> 
+  <li><b>File Handling and Input Processing:</b> 
+    <ul>
+      <li>Handled resume uploads in PDF format via API.</li> 
+      <li>Extracted text from PDFs using pdfplumber.</li> 
+      <li>Accepted job description input as raw text.</li> 
+    </ul> 
+  </li> 
+  <li><b>Text Preprocessing Pipeline:</b> 
+    <ul>
+      <li>Converted text to lowercase for uniformity.</li>
+      <li>Removed special characters and noise using regex.</li>
+      <li>Ensured clean and consistent input for NLP processing.</li> 
+    </ul>
+  </li> 
+  <li><b>Model Integration:</b> 
+    <ul>
+      <li>Integrated pre-trained Sentence Transformer model (all-MiniLM-L6-v2).</li> 
+      <li>Generated embeddings for both resume and job description.</li> 
+      <li>Ensured efficient inference for real-time analysis.</li>
+    </ul>
+  </li> 
+  <li><b>Similarity and Scoring Logic:</b> 
+    <ul> 
+      <li>Computed cosine similarity between embeddings.</li> 
+      <li>Converted similarity score into percentage format.</li> 
+      <li>Handled NumPy outputs and converted them into JSON-serializable formats.</li>
+    </ul> 
+  </li>
+  <li><b>Skill Extraction and Comparison:</b> 
+    <ul> 
+      <li>Defined a set of relevant technical skills.</li> 
+      <li>Extracted skills from resume and job description text.</li> 
+      <li>Compared skills to identify matched and missing ones.</li>
+    </ul>
+  </li> 
+  <li><b>API Response Handling:</b> 
+    <ul> 
+      <li>Returned structured JSON response including score, matched skills, and missing skills.</li> <li>Implemented error handling for missing inputs and runtime exceptions.</li>
+      <li>Ensured smooth integration with frontend UI.</li> 
+    </ul> 
+  </li> 
+</ol>
