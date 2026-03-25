@@ -23,15 +23,16 @@
 </ul>
 <h3>Home Page</h3> 
 <p> Designed a clean and interactive home page where users can upload their resume and input the job description for analysis. </p> 
-<img src="" style="width: 500px; height: 400px; object-fit: cover;">
+<img src="https://github.com/IshitaSinha2002/ResumeIQ/blob/main/Screenshot%20(44).png" style="width: 500px; height: 400px; object-fit: cover;">
 <h3>Results Page</h3>
 <p> Created a results page that clearly presents: 
 <ul> 
   <li><b>Match Score</b> (resume vs job description)</li> 
   <li><b>Matched Skills</b></li> <li><b>Missing Skills</b></li> 
-  <li><b>The UI highlights key insights to help users quickly understand their strengths and gaps. </b></li>
+<p>The UI highlights key insights to help users quickly understand their strengths and gaps.</p>
 </ul> 
-</p> <img src="" style="width: 500px; height: 400px; object-fit: cover;">
+</p> <img src="https://github.com/IshitaSinha2002/ResumeIQ/blob/main/Screenshot%20(42).png" style="width: 500px; height: 400px; object-fit: cover;">
+</p> <img src="https://github.com/IshitaSinha2002/ResumeIQ/blob/main/Screenshot%20(43).png" style="width: 500px; height: 400px; object-fit: cover;">
 <h3>Implementation Details</h3> 
 <ol> 
   <li><b>Resume Parsing:</b> 
