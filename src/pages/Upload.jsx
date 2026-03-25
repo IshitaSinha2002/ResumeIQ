@@ -5,26 +5,58 @@ export default function UploadPage() {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [jd, setJd] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleAnalyze = () => {
-    navigate("/results", {
-      state: {
-        score: 78,
-        matched: ["Python", "SQL", "Machine Learning"],
-        missing: ["AWS", "Docker", "Tableau"],
-        suggestions: [
-          "💡 Add AWS experience to your projects",
-          "⚡ Mention Tableau dashboards",
-          "🚀 Include ML deployment work"
-        ]
+  const handleAnalyze = async () => {
+    if (!file || !jd) {
+      alert("Please upload resume and enter job description");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("resume", file);
+    formData.append("jd", jd);
+
+    try {
+      setLoading(true);
+
+      const response = await fetch("http://127.0.0.1:5000/analyze", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.error) {
+        alert(data.error);
+        return;
       }
-    });
+
+      navigate("/results", {
+        state: {
+          score: data.score,
+          matched: data.matched_skills,
+          missing: data.missing_skills,
+          suggestions: [
+            "💡 Add missing skills to your resume",
+            "⚡ Include relevant projects",
+            "🚀 Tailor resume for the job description"
+          ]
+        }
+      });
+
+    } catch (error) {
+      console.error(error);
+      alert("Server error. Make sure backend is running.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81] flex items-center justify-center px-4">
 
-      {/* Card Container */}
+      {/* Card */}
       <div className="w-full max-w-2xl bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-xl">
 
         {/* Heading */}
@@ -44,6 +76,7 @@ export default function UploadPage() {
 
           <input
             type="file"
+            accept=".pdf"
             onChange={(e) => setFile(e.target.files[0])}
             className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-200 cursor-pointer hover:bg-white/20 transition"
           />
@@ -67,9 +100,14 @@ export default function UploadPage() {
         {/* Button */}
         <button
           onClick={handleAnalyze}
-          className="w-full py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105 transition duration-300 shadow-lg"
+          disabled={loading}
+          className={`w-full py-3 rounded-lg font-semibold text-white transition duration-300 shadow-lg
+            ${loading
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105"
+            }`}
         >
-          Analyze Resume 🚀
+          {loading ? "Analyzing..." : "Analyze Resume 🚀"}
         </button>
 
       </div>
