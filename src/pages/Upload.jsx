@@ -29,7 +29,7 @@ export default function UploadPage() {
 
         {/* Heading */}
         <h1 className="text-4xl font-bold text-center text-white mb-3">
-          ATS Resume Analyzer
+          Resume IQ
         </h1>
 
         <p className="text-center text-gray-300 mb-8">
