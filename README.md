@@ -1,16 +1,12 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<h1>Resume IQ – ATS Resume Screening System</h1> <h3>Project Overview</h3> 
+<p> Resume IQ is a full-stack NLP-based application designed to analyze resumes against job descriptions and determine how well a candidate matches a given role. The system processes both resume and job description text, applies semantic similarity techniques, and provides a match score along with skill-based insights. It helps users identify missing skills and improve their resumes to better align with job requirements. </p>
+<h3>Features</h3> 
+<ul> 
+  <li>Upload resume in PDF format</li>
+  <li>Input job description for comparison</li> 
+  <li>Semantic similarity-based match score (0–100%)</li>
+  <li>Skill extraction and comparison</li> 
+  <li>Matched skills identification</li>
+  <li>Missing skills detection</li> 
+  <li>Real-time analysis with interactive UI</li>
+</ul>
