@@ -21,7 +21,18 @@
   <li><b>Similarity Computation:</b> Cosine Similarity</li>
   <li><b>Libraries:</b> scikit-learn, pdfplumber, numpy, re</li>
 </ul>
-<h3>How It Works</h3> 
+<h3>Home Page</h3> 
+<p> Designed a clean and interactive home page where users can upload their resume and input the job description for analysis. </p> 
+<img src="" style="width: 500px; height: 400px; object-fit: cover;">
+<h3>Results Page</h3>
+<p> Created a results page that clearly presents: 
+<ul> 
+  <li><b>Match Score</b> (resume vs job description)</li> 
+  <li><b>Matched Skills</b></li> <li><b>Missing Skills</b></li> 
+  <li><b>The UI highlights key insights to help users quickly understand their strengths and gaps. </b></li>
+</ul> 
+</p> <img src="" style="width: 500px; height: 400px; object-fit: cover;">
+<h3>Implementation Details</h3> 
 <ol> 
   <li><b>Resume Parsing:</b> 
     <ul> 
